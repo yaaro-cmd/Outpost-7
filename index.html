@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101210" />
+    <meta name="description" content="Play Mindustry's solo campaign in your browser." />
+    <title>Mindustry — Outpost 07</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Outpost 07 home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>OUTPOST <b>07</b></span>
+        </a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="#briefing">BRIEFING</a>
+          <a href="#game">THE GAME</a>
+          <a href="#credits">CREDITS</a>
+        </nav>
+        <a class="status-pill" href="#game"><span class="status-dot"></span> SOLO CAMPAIGN</a>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> SERPULO SYSTEM&nbsp; / &nbsp;MISSION 01</p>
+            <h1 id="hero-title">BUILD<br />THE <em>LINE.</em></h1>
+            <p class="hero-description">Land on a hostile world. Turn raw resources into an automated defense. Hold the line against the incoming waves.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#game"><span class="play-icon" aria-hidden="true">▶</span> ENTER THE CAMPAIGN</a>
+              <a class="button button-quiet" href="#briefing">READ THE BRIEFING <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-note"><span class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span> BROWSER BUILD · SINGLE PLAYER · NO ACCOUNT</div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-grid"></div>
+            <div class="art-sun"></div>
+            <div class="planet-ring ring-one"></div>
+            <div class="planet-ring ring-two"></div>
+            <div class="planet"></div>
+            <div class="orbit orbit-a"></div>
+            <div class="orbit orbit-b"></div>
+            <span class="art-label label-top">SECTOR 01 // GROUND ZERO</span>
+            <span class="art-label label-bottom">NO SIGNAL · NO BACKUP</span>
+            <span class="art-coordinate">32° 08′ N<br />117° 12′ E</span>
+            <div class="crosshair"><i></i><i></i></div>
+          </div>
+          <div class="hero-index"><span>01</span><span class="index-rule"></span><span>03</span></div>
+        </section>
+
+        <section class="briefing section-grid" id="briefing" aria-labelledby="briefing-title">
+          <div class="section-label"><span>01</span> MISSION BRIEF</div>
+          <div class="briefing-content">
+            <div>
+              <h2 id="briefing-title">A planet that<br />doesn’t <em>welcome you.</em></h2>
+              <p class="briefing-copy">Mindustry blends tower defense, factory building, and real-time strategy. Mine copper and lead, route them through conveyor belts, and build turrets before the next wave reaches your core.</p>
+            </div>
+            <div class="briefing-cards">
+              <article class="brief-card"><span class="card-number">01 / GATHER</span><div class="resource-glyph copper">Cu</div><h3>SECURE RESOURCES</h3><p>Mine the ground and keep materials flowing.</p></article>
+              <article class="brief-card"><span class="card-number">02 / AUTOMATE</span><div class="belt-glyph" aria-hidden="true"><span></span><span></span><span></span></div><h3>BUILD THE FACTORY</h3><p>Connect drills, belts, and supply lines.</p></article>
+              <article class="brief-card"><span class="card-number">03 / DEFEND</span><div class="turret-glyph" aria-hidden="true"><span></span><span></span></div><h3>HOLD EACH SECTOR</h3><p>Place defenses and survive each wave.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="game-section" id="game" aria-labelledby="game-title">
+          <div class="game-heading">
+            <div><p class="eyebrow"><span class="eyebrow-line"></span> LIVE CONNECTION</p><h2 id="game-title">THE <em>FRONTLINE</em></h2></div>
+            <div class="game-heading-right"><span class="live-indicator"><i></i> BROWSER BUILD</span><a class="source-link" href="https://github.com/Anuken/Mindustry" target="_blank" rel="noreferrer">OPEN SOURCE ↗</a></div>
+          </div>
+          <div class="game-frame-wrap" id="gameFrameWrap">
+            <div class="game-placeholder" id="gamePlaceholder">
+              <div class="placeholder-grid"></div>
+              <div class="placeholder-content">
+                <span class="core-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <p class="eyebrow">GROUND ZERO // SERPULO</p>
+                <h3>YOUR DROP ZONE<br /><em>IS READY.</em></h3>
+                <p class="placeholder-text">The game loads from its open-source browser port. First launch may take a moment to download game assets.</p>
+                <button class="button button-primary launch-button" id="launchButton" type="button"><span class="play-icon" aria-hidden="true">▶</span> LAUNCH MINDUSTRY</button>
+                <p class="launch-status" id="launchStatus" aria-live="polite">REQUIRES A MODERN BROWSER WITH WEBGL</p>
+              </div>
+              <div class="placeholder-coord">SINGLE PLAYER<br />CAMPAIGN</div>
+            </div>
+            <iframe class="game-frame" id="gameFrame" title="Mindustry browser game" allow="fullscreen; gamepad" allowfullscreen loading="lazy"></iframe>
+            <button class="fullscreen-button" id="fullscreenButton" type="button" aria-label="Fullscreen game" title="Fullscreen">⛶</button>
+          </div>
+          <div class="game-caption"><span><i></i> SOLO CAMPAIGN · SERPULO</span><span>SAVE DATA STAYS IN YOUR BROWSER</span><a href="https://khoichon.dev/mindustry-web/offlinemode/build/" target="_blank" rel="noreferrer">OPEN GAME IN A NEW TAB ↗</a></div>
+        </section>
+
+        <section class="controls section-grid" aria-labelledby="controls-title">
+          <div class="section-label"><span>02</span> FIELD NOTES</div>
+          <div class="controls-content">
+            <div><h2 id="controls-title">FIRST TIME<br />ON <em>SERPULO?</em></h2><p>Follow the in-game tutorial to learn movement, mining, building, and defending your core. You can pause and adjust settings from the game menu.</p></div>
+            <a class="manual-link" href="https://mindustrygame.github.io/wiki/" target="_blank" rel="noreferrer"><span class="manual-icon">↗</span><span><b>OPEN THE FIELD MANUAL</b><small>Mindustry guide and game reference</small></span></a>
+          </div>
+        </section>
+      </main>
+
+      <footer id="credits">
+        <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>OUTPOST <b>07</b></span></a>
+        <p>Mindustry is an open-source game by <a href="https://github.com/Anuken/Mindustry" target="_blank" rel="noreferrer">Anuken and contributors</a>, licensed under GPL-3.0. This project is an independent student-made launcher and is not affiliated with the developers.</p>
+        <div class="footer-links"><a href="https://github.com/Anuken/Mindustry" target="_blank" rel="noreferrer">GAME SOURCE ↗</a><a href="https://github.com/khoichon/mindustry-web" target="_blank" rel="noreferrer">BROWSER PORT ↗</a></div>
+      </footer>
+    </div>
+  </body>
+</html>
